@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Main from './Component/Main';
 
 function App() {
   return (
     <div className="App">
-      hello and deployed
+      <p className='header'>Search jobs</p>
+      <Main/>
     </div>
   );
 }
