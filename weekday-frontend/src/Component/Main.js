@@ -8,8 +8,10 @@ const Main = () => {
   
   return (
     <div className='main'>
+      
         <Filter filteredObject={filteredObject} setFilteredObject={setFilteredObject}/>
         <Jobs filteredObject={filteredObject}/>
+        {console.log(filteredObject)}
     </div>
   )
 }

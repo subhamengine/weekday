@@ -25,9 +25,9 @@ const Filter = ({filteredObject,setFilteredObject}) => {
   ];
 
   const baseSalaryOptions = [
-    { value: "0L", label: "0L" },
-    { value: "10L", label: "10L" },
-    { value: "20L", label: "20L" },
+    { value: "0", label: "0L" },
+    { value: "10", label: "10L" },
+    { value: "20", label: "20L" },
   ];
 
 
@@ -64,6 +64,7 @@ const Filter = ({filteredObject,setFilteredObject}) => {
   };
 
   const handleBaseSalaryChange = (selectedOption) => {
+    console.log(selectedOption);
 
     setFilteredObject({...filteredObject, baseSalary : selectedOption })
   };
@@ -85,7 +86,7 @@ const Filter = ({filteredObject,setFilteredObject}) => {
       <div style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
       <p style={{height:"5px"}}>
           {
-            filteredObject.role && filteredObject.role.length && <>Roles</>
+            (filteredObject.role) && <>Roles</>
           }
         </p>
 

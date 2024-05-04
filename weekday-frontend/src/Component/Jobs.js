@@ -41,11 +41,15 @@ const Jobs = ({ filteredObject }) => {
     getData();
   }, []);
 
-  const items = data.filter((item)=>((filteredObject.role && filteredObject.role.find((e)=>{
+  const items = data.filter((item)=>((filteredObject.role && filteredObject.role.length ? filteredObject.role.find((e)=>{
     return e.label.toLowerCase() === item.jobRole.toLowerCase();
-  })) || (filteredObject.experience && filteredObject.experience.find((e)=>{
+  }) : true) && (filteredObject.experience && filteredObject.experience.length ? filteredObject.experience.find((e)=>{
     return e.label.toLowerCase() <= item.minExp;
-  }))))
+  }):true) && (filteredObject.remote ? filteredObject.remote.find((e)=>{
+    return e.label.toLowerCase() <= item.remote;
+  }):true) && (filteredObject.techStack && filteredObject.techStack.length ? filteredObject.techStack.find((e)=>{
+    return e.label.toLowerCase() === item.techStack;
+  }):true) && (filteredObject.baseSalary  ? filteredObject.baseSalary.value <= item.minJdSalary:true) && (filteredObject.companyName && filteredObject.companyName.length ? filteredObject.companyName.toLowerCase() === item.companyName.toLowerCase():true)))
 
 
   return (
