@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Filter from './Filter'
-import Jobs from './Jobs'
+
+const Jobs = React.lazy(() => import('./Jobs'));
+
 
 const Main = () => {
 
   return (
     <div className='main'>
-       <p className='header'>Search jobs</p>
+     
+      <p className='header'>Search jobs</p>
       <Filter />
-      <Jobs />
+      <Suspense fallback={<p>Jobs are loading!</p>}>
+        <Jobs />
+      </Suspense>
+
+
     </div>
   )
 }
