@@ -10,6 +10,7 @@ const Filter = () => {
   const filteredObject = useSelector(state => state.filteredObject)
 
 
+  // options for roles
   const options = [
     { value: "frontend", label: "frontend" },
     { value: "ios", label: "ios" },
@@ -20,6 +21,9 @@ const Filter = () => {
     { value: "Android", label: "Android" },
     { value: "Web3", label: "Web3" },
   ];
+
+    // options for experience
+
   const experienceOptions = [
     { value: "1", label: "1" },
     { value: "2", label: "2" },
@@ -31,16 +35,24 @@ const Filter = () => {
     { value: "8", label: "8" },
     { value: "9", label: "9" },
   ];
+
+    // options for remote
+
   const remoteOptions = [
     { value: "Remote", label: "Remote" },
     { value: "Hybrid", label: "Hybrid" },
     { value: "In-Office", label: "In-Office" },
   ];
+
+    // options for techstack
+
   const tectstackOptions = [
     { value: "Python", label: "Python" },
     { value: "Java", label: "Java" },
     { value: "Golang", label: "Golang" },
   ];
+
+    // options for base pay
 
   const baseSalaryOptions = [
     { value: "0", label: "0k" },
@@ -53,20 +65,12 @@ const Filter = () => {
   
   // Handle change when an option is selected
   const handleSelectedRoleChange = (selectedOption) => {
-
-    
-
     dispatch(setFilteredObject({...filteredObject, role : selectedOption }))
-
-    
   };
 
 
   const handleExperienceChange = (selectedOption) => {
-
     dispatch(setFilteredObject({...filteredObject, experience : selectedOption }))
-
-    
   };
 
 
@@ -116,12 +120,7 @@ const Filter = () => {
 
         />
       </div>
-
-
       
-
-
-
       <div style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
       <p style={{height:"5px"}}>
           {

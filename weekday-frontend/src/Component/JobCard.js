@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 
-const JobCard = ({item,setOpenModal,setopenJob}) => {
-
-
-  
-
+const JobCard = ({item,setOpenModal}) => {
 
   return (
     

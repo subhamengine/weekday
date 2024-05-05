@@ -51,6 +51,9 @@ const Jobs = () => {
     getData();
   }, []);
 
+
+  //filtering the items based on the filter options
+
   const items = data.filter((item)=>((filteredObject.role && filteredObject.role.length ? filteredObject.role.find((e)=>{
     return e.label.toLowerCase() === item.jobRole.toLowerCase();
   }) : true) && (filteredObject.experience && filteredObject.experience.length ? filteredObject.experience.find((e)=>{
