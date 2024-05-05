@@ -83,7 +83,7 @@ const Filter = () => {
   };
 
   const handleBaseSalaryChange = (selectedOption) => {
-    console.log(selectedOption);
+    
 
     dispatch(setFilteredObject({...filteredObject, baseSalary : selectedOption }))
   };
@@ -97,9 +97,7 @@ const Filter = () => {
   
   return (
     <div className="filterMain">
-      {
-        console.log(filteredObject)
-      }
+      
 
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>

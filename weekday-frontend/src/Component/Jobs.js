@@ -1,6 +1,7 @@
+
 import React from "react";
 import JobCard from "./JobCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { setData } from "../features/jobs/jobSlice";
 
@@ -9,6 +10,11 @@ const Jobs = () => {
   const data = useSelector(state => state.data)
   const filteredObject = useSelector(state => state.filteredObject);
   const dispatch = useDispatch('');
+
+
+
+  const [openModal,setOpenModal]=useState(null);
+ 
 
 
 
@@ -34,7 +40,6 @@ const Jobs = () => {
 
 
         if(responseData){
-          console.log(responseData);
           dispatch(setData(responseData.jdList));
         }
         
@@ -60,7 +65,16 @@ const Jobs = () => {
   return (
     <div className="jobs">
       
-      {items.map((item) => (<JobCard key={item.jdUid} item = {item}/>))}
+      {items.map((item) => (<JobCard key={item.jdUid} item = {item} setOpenModal={setOpenModal} />))}
+      {
+        openModal !== null && <div class='modal'>
+          <div class="mainModal"  >
+            <h3>Job Description</h3>
+            <h5>About Company</h5>
+            <p>{openModal.jobDetailsFromCompany}</p>
+          </div>
+        </div>
+      }
     </div>
   );
 };

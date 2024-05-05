@@ -76,6 +76,7 @@ code {
  justify-content: start;
  align-items: center;
  padding: 1rem;
+ 
 }
 
 .posted{
@@ -201,7 +202,7 @@ code {
     background: none;
     color: inherit;
     font: inherit;
-    cursor: pointer;
+    
     outline: none;
 }
 
@@ -254,7 +255,7 @@ code {
 }
 
 .jobcard:hover {
-  transform: scale(1.007); /* Zoom in by 10% */
+  transform: scale(1.01); /* Zoom in by 10% */
 }
 
 
@@ -289,6 +290,37 @@ code {
     border-width: 1px;
     box-sizing: border-box;
     padding-left: 0.4rem;
+}
+
+.modal{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+ left: 0;
+ right: 0;
+
+ 
+  background-color: rgba(0, 0, 0, 0.5);
+    -webkit-tap-highlight-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainModal{
+  width: 60vw;
+  max-height: 80vh;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  z-index: 100;
+  overflow-y: scroll;
+}
+.mainModal > h5,p{
+  text-align: left;
 }
 
 

@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const JobCard = ({item}) => {
+const JobCard = ({item,setOpenModal,setopenJob}) => {
+
+
+  
+
+
   return (
     
     <div class='jobcard'>
-      {console.log(item)}
+      
       <div class='posted'>
         <p>⏳ Posted 10 days ago</p>
       </div>
@@ -29,7 +34,7 @@ const JobCard = ({item}) => {
         </div>
         <div class="fade-effect">
             <div class="fade-overlay">
-              <button>Show more</button>
+              <button onClick={()=>setOpenModal(item)} onBlur={()=>setOpenModal(null)}>Show more</button>
             </div>
           </div>
       </div>
@@ -41,6 +46,7 @@ const JobCard = ({item}) => {
         <button class='button1'> ⚡️ Easy Apply</button>
         <button class='button2'> Unlock referral asks</button>
       </div>
+      
     </div>
   )
 }
