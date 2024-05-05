@@ -42,7 +42,7 @@ code {
 }
 
 .filterMain{
-  border: 1px solid black;
+  
   width: 100%;
   min-height: 15%;
   display: flex;
@@ -66,14 +66,196 @@ code {
  
 }
 .jobcard{
-  border: 1px solid black;
- height: 65vh;
+  
+ height: 70vh;
  transition: transform 0.3s ease;
+ box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
+ border-radius: 20px;
+ display: flex;
+ flex-direction: column;
+ justify-content: start;
+ align-items: center;
+ padding: 1rem;
+}
+
+.posted{
+  height: 10%;
+  width: 100%;
+  
+}
+.posted > p{
+  width: 100px;
+  padding: 4px 6px;
+  box-shadow: rgba(6, 6, 6, 0.05) 0px 2px 6px 0px;
+  border-radius: 10px;
+   
+  font-size: 9px;
+}
+
+.jobheader{
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.jobImage{
+  width: 10%;
+}
+
+.jobName{
+  height: 100%;
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 0.5rem;
 
 }
+
+.comapanyName{
+  font-size: 0.813rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+    color: #8b8b8b;
+}
+
+.jd{
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.jobLoc{
+  font-size: 0.688rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.salary{
+  width: 100%;
+  height: 5%;
+  
+  font-weight: 400;
+  font-size: 0.875rem !important;
+  color: rgb(77, 89, 106);
+  text-align: start;
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  height: 45%;
+  width: 100%;
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 400;
+  text-align: start;
+  white-space: pre-wrap;
+
+  
+  
+}
+.aboutHeader{
+  display: flex;
+  flex-direction: column;
+  white-space: wrap;
+    overflow: hidden;
+    
+    gap: 0.5rem;
+
+}
+
+.aboutHeader2{
+  font-size: 1rem;
+    
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.fade-effect {
+  position: relative; 
+}
+
+.fade-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px; 
+ 
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  color: #4943da;
+  background: linear-gradient(to bottom, transparent, white);
+}
+.fade-overlay > button{
+  color: #4943da;
+  margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.experience{
+  width: 100%;
+  height: 7%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 1rem;
+}
+.experience > span{
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem
+
+}
+.expText{
+  font-size: 0.813rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    color: #8b8b8b !important;
+}
+
+.buttons{
+  height: 15%;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+.button1{
+  width: 100%;
+    background-color: rgb(85, 239, 196);
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px
+}
+.button2{
+  width: 100%;
+  background-color: rgb(73, 67, 218);
+  font-weight: 500;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px
+}
+
 .jobcard:hover {
   transform: scale(1.007); /* Zoom in by 10% */
 }
+
 
 
 .input{
@@ -126,8 +308,8 @@ code {
     grid-template-columns: 1fr; /* Reduce to 1 column */
   }
   .filterMain{
-    height: 85%;
-    border: 1px solid black;
+    height: 55%;
+    margin-bottom: 1rem;
   }
 
 }
