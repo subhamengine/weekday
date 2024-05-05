@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useMemo } from "react";
 import JobCard from "./JobCard";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
@@ -54,15 +54,16 @@ const Jobs = () => {
 
   //filtering the items based on the filter options
 
-  const items = data.filter((item)=>((filteredObject.role && filteredObject.role.length ? filteredObject.role.find((e)=>{
-    return e.label.toLowerCase() === item.jobRole.toLowerCase();
-  }) : true) && (filteredObject.experience && filteredObject.experience.length ? filteredObject.experience.find((e)=>{
-    return e.label.toLowerCase() <= item.minExp;
-  }):true) && (filteredObject.remote && filteredObject.remote.length ? filteredObject.remote.find((e)=>{
-    return e.label.toLowerCase() === item.location.toLowerCase();
-  }):true) && (filteredObject.techStack && filteredObject.techStack.length ? filteredObject.techStack.find((e)=>{
-    return e.label.toLowerCase() === item.techStack;
-  }):true) && (filteredObject.baseSalary  ? filteredObject.baseSalary.value <= item.minJdSalary:true) && (filteredObject.companyName && filteredObject.companyName.length ? filteredObject.companyName.toLowerCase() === item.companyName.toLowerCase():true)))
+  const items = useMemo(() => {
+    return data.filter(item => (
+      (filteredObject.role && filteredObject.role.length ? filteredObject.role.find(e => e.label.toLowerCase() === item.jobRole.toLowerCase()) : true) &&
+      (filteredObject.experience && filteredObject.experience.length ? filteredObject.experience.find(e => e.label.toLowerCase() <= item.minExp) : true) &&
+      (filteredObject.remote && filteredObject.remote.length ? filteredObject.remote.find(e => e.label.toLowerCase() === item.location.toLowerCase()) : true) &&
+      (filteredObject.techStack && filteredObject.techStack.length ? filteredObject.techStack.find(e => e.label.toLowerCase() === item.techStack) : true) &&
+      (filteredObject.baseSalary ? filteredObject.baseSalary.value <= item.minJdSalary : true) &&
+      (filteredObject.companyName && filteredObject.companyName.length ? filteredObject.companyName.toLowerCase() === item.companyName.toLowerCase() : true)
+    ));
+  }, [data, filteredObject]);
 
 
   return (
