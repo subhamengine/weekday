@@ -50,8 +50,8 @@ const Jobs = () => {
     return e.label.toLowerCase() === item.jobRole.toLowerCase();
   }) : true) && (filteredObject.experience && filteredObject.experience.length ? filteredObject.experience.find((e)=>{
     return e.label.toLowerCase() <= item.minExp;
-  }):true) && (filteredObject.remote ? filteredObject.remote.find((e)=>{
-    return e.label.toLowerCase() <= item.remote;
+  }):true) && (filteredObject.remote && filteredObject.remote.length ? filteredObject.remote.find((e)=>{
+    return e.label.toLowerCase() === item.location.toLowerCase();
   }):true) && (filteredObject.techStack && filteredObject.techStack.length ? filteredObject.techStack.find((e)=>{
     return e.label.toLowerCase() === item.techStack;
   }):true) && (filteredObject.baseSalary  ? filteredObject.baseSalary.value <= item.minJdSalary:true) && (filteredObject.companyName && filteredObject.companyName.length ? filteredObject.companyName.toLowerCase() === item.companyName.toLowerCase():true)))
@@ -59,19 +59,8 @@ const Jobs = () => {
 
   return (
     <div className="jobs">
-      {console.log(items)}
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
+      
+      {items.map((item) => (<JobCard key={item.jdUid} item = {item}/>))}
     </div>
   );
 };

@@ -13,12 +13,23 @@ const Filter = () => {
   const options = [
     { value: "frontend", label: "frontend" },
     { value: "ios", label: "ios" },
-    { value: "orange", label: "Orange" },
+    { value: "backend", label: "Backend" },
+    { value: "Full stack", label: "Full stack" },
+    { value: "Flutter", label: "Flutter" },
+    { value: "React Native", label: "React Native" },
+    { value: "Android", label: "Android" },
+    { value: "Web3", label: "Web3" },
   ];
   const experienceOptions = [
     { value: "1", label: "1" },
     { value: "2", label: "2" },
-    { value: "100", label: "100" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" },
+    { value: "5", label: "5" },
+    { value: "6", label: "6" },
+    { value: "7", label: "7" },
+    { value: "8", label: "8" },
+    { value: "9", label: "9" },
   ];
   const remoteOptions = [
     { value: "Remote", label: "Remote" },
@@ -32,9 +43,9 @@ const Filter = () => {
   ];
 
   const baseSalaryOptions = [
-    { value: "0", label: "0L" },
-    { value: "10", label: "10L" },
-    { value: "20", label: "20L" },
+    { value: "0", label: "0k" },
+    { value: "10", label: "10k" },
+    { value: "20", label: "20k" },
   ];
 
 
@@ -94,7 +105,7 @@ const Filter = () => {
       <div style={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
       <p style={{height:"5px"}}>
           {
-            (filteredObject.role) && <>Roles</>
+            (filteredObject.role ) && <span>Roles</span>
           }
         </p>
 
