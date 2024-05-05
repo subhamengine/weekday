@@ -323,6 +323,10 @@ code {
   text-align: left;
 }
 
+.mainModal > p {
+  font-weight: 300;
+}
+
 
 
 
