@@ -1,8 +1,15 @@
 import React from "react";
-import { useState } from "react";
 import Select from "react-select";
+import { setFilteredObject } from "../features/jobs/jobSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const Filter = ({filteredObject,setFilteredObject}) => {
+const Filter = () => {
+
+
+  const dispatch = useDispatch();
+  const filteredObject = useSelector(state => state.filteredObject)
+
+
   const options = [
     { value: "frontend", label: "frontend" },
     { value: "ios", label: "ios" },
@@ -35,9 +42,10 @@ const Filter = ({filteredObject,setFilteredObject}) => {
   
   // Handle change when an option is selected
   const handleSelectedRoleChange = (selectedOption) => {
+
     
 
-    setFilteredObject({...filteredObject, role : selectedOption })
+    dispatch(setFilteredObject({...filteredObject, role : selectedOption }))
 
     
   };
@@ -45,7 +53,7 @@ const Filter = ({filteredObject,setFilteredObject}) => {
 
   const handleExperienceChange = (selectedOption) => {
 
-    setFilteredObject({...filteredObject, experience : selectedOption })
+    dispatch(setFilteredObject({...filteredObject, experience : selectedOption }))
 
     
   };
@@ -53,25 +61,25 @@ const Filter = ({filteredObject,setFilteredObject}) => {
 
   const handleRemoteChange = (selectedOption) => {
 
-    setFilteredObject({...filteredObject, remote : selectedOption })
+    dispatch(setFilteredObject({...filteredObject, remote : selectedOption }))
   };
 
 
 
   const handleTechStackChange = (selectedOption) => {
 
-    setFilteredObject({...filteredObject, techStack : selectedOption })
+    dispatch(setFilteredObject({...filteredObject, techStack : selectedOption }))
   };
 
   const handleBaseSalaryChange = (selectedOption) => {
     console.log(selectedOption);
 
-    setFilteredObject({...filteredObject, baseSalary : selectedOption })
+    dispatch(setFilteredObject({...filteredObject, baseSalary : selectedOption }))
   };
 
   const handleCompanyNameChange = (selectedOption) => {
 
-    setFilteredObject({...filteredObject, companyName : selectedOption.target.value })
+    dispatch(setFilteredObject({...filteredObject, companyName : selectedOption.target.value }))
   };
 
 

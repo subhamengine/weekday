@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import JobCard from "./JobCard";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { setData } from "../features/jobs/jobSlice";
 
-const Jobs = ({ filteredObject }) => {
+const Jobs = () => {
 
-  const [data,setData] = useState([]);
+  const data = useSelector(state => state.data)
+  const filteredObject = useSelector(state => state.filteredObject);
+  const dispatch = useDispatch('');
+
 
 
   useEffect(() => {
@@ -30,7 +35,7 @@ const Jobs = ({ filteredObject }) => {
 
         if(responseData){
           console.log(responseData);
-          setData(responseData.jdList)
+          dispatch(setData(responseData.jdList));
         }
         
 
