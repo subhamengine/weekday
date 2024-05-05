@@ -5,7 +5,7 @@ import Main from './Component/Main';
 function App() {
   return (
     <div className="App">
-      <p className='header'>Search jobs</p>
+      
       <Main/>
     </div>
   );

@@ -19,26 +19,31 @@ code {
   height: 100vh;
 }
 
-.header{
-  border-bottom: 1px solid #3522e2;
-  width: 7rem;
-  padding: 0.2rem;
-  cursor: pointer;
-  height: 5%;
-}
+
 
 .main{
   width: 90vw;
-  height: 92% ;
+  height: 100% ;
+  
   display: flex;
   flex-direction: column;
-  gap: 10%;
+  align-items: center;
+  gap: 5%;
   
+  
+}
+
+.header{
+  border-bottom: 1px solid #3522e2;
+  width: 7rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
   
 }
 
 .filterMain{
-  
+  border: 1px solid black;
+  width: 100%;
   min-height: 15%;
   display: flex;
   align-items: center;
