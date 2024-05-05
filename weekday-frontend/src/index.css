@@ -322,6 +322,9 @@ code {
 .mainModal > h5,p{
   text-align: left;
 }
+.mainModal>p{
+  font-weight: 400;
+}
 
 
 
