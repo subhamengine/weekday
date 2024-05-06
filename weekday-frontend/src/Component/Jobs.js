@@ -61,7 +61,7 @@ const Jobs = () => {
       (filteredObject.remote && filteredObject.remote.length ? filteredObject.remote.find(e => e.label.toLowerCase() === item.location.toLowerCase()) : true) &&
       (filteredObject.techStack && filteredObject.techStack.length ? filteredObject.techStack.find(e => e.label.toLowerCase() === item.techStack) : true) &&
       (filteredObject.baseSalary ? filteredObject.baseSalary.value <= item.minJdSalary : true) &&
-      (filteredObject.companyName && filteredObject.companyName.length ? filteredObject.companyName.toLowerCase() === item.companyName.toLowerCase() : true)
+      (filteredObject.companyName && filteredObject.companyName.length ? item.companyName.toLowerCase().includes(filteredObject.companyName.toLowerCase()) : true)
     ));
   }, [data, filteredObject]);
 
